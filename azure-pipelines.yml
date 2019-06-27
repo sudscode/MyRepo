@@ -23,3 +23,9 @@ steps:
    commnad: test
    projects: '**/*Tests/*.csproj'
    aguments: --configuration $(buildConfiguration)
+
+- script: dotnet test SimpleAPI.Tests.csproj --logger trx --collect "Code coverage"
+- task: PublishTestResults@2
+  inputs:
+    testRunner: xUnit
+    testResultsFiles: '**/*.trx'
