@@ -1,18 +1,15 @@
-using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
-namespace Tests
+namespace SimpleAPI.Tests
 {
-    public class Tests
+    public class UnitTest1
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
-        [Test]
+        [Fact]
         public void Test1()
         {
-            Assert.AreEqual("1", 1);
+            Assert.Empty(new List<int>());
         }
     }
 }
