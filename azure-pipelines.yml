@@ -15,14 +15,16 @@ variables:
 
 steps:
 
-- script: dotnet test $(System.DefaultWorkingDirectory)/**/SimpleAPI.Tests.csproj
-
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-
-
 - script: dotnet test $(System.DefaultWorkingDirectory)/**/SimpleAPI.Tests.csproj --logger trx --collect "Code coverage"
 - task: PublishTestResults@2
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
+
+#- script: dotnet test $(System.DefaultWorkingDirectory)/**/SimpleAPI.Tests.csproj
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+
+
+
