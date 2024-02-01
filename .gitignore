@@ -1,5 +1,6 @@
 .terraform/
-terraform.lock.hcl
+.terraform.lock.hcl
 terraform.tfstate
 *.tfvars
 tfsecrets.txt
+terraform.tfstate.backup
